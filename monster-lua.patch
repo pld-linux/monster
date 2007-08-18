@@ -1,0 +1,37 @@
+--- Monster-1.23-src/src/area.h~	2007-08-18 21:51:56.000000000 +0200
++++ Monster-1.23-src/src/area.h	2007-08-18 21:42:38.000000000 +0200
+@@ -32,7 +32,7 @@
+ #include <vector>
+ 
+ extern "C" {
+-#include <lua.h>
++#include <lua51/lua.h>
+ }
+ 
+ #include "object.h"
+--- Monster-1.23-src/src/script.h~	2007-08-18 21:52:45.000000000 +0200
++++ Monster-1.23-src/src/script.h	2007-08-18 21:42:38.000000000 +0200
+@@ -29,9 +29,9 @@
+ #define SCRIPTING_H
+ 
+ extern "C" {
+-#include <lua.h>
+-#include <lauxlib.h>
+-#include <lualib.h>
++#include <lua51/lua.h>
++#include <lua51/lauxlib.h>
++#include <lua51/lualib.h>
+ }
+ 
+ #include "player.h"
+--- Monster-1.23-src/src/Makefile~	2007-08-18 21:56:31.000000000 +0200
++++ Monster-1.23-src/src/Makefile	2007-08-18 21:55:50.000000000 +0200
+@@ -37,7 +37,7 @@
+ 
+ ALLEGROLIBS=`allegro-config --libs`
+ VORBISLIBS=-lvorbisfile -lvorbis -logg
+-LIBS=-lfudgefont -lfreetype -ltgui -llua -llogg $(VORBISLIBS) $(ALLEGROLIBS)
++LIBS=-lfudgefont -lfreetype -ltgui -llua51 -llogg $(VORBISLIBS) $(ALLEGROLIBS)
+ 
+ default: monster
+ 
