@@ -1,0 +1,32 @@
+--- Monster-1.23-src/src/Makefile~	2007-08-18 22:16:12.000000000 +0200
++++ Monster-1.23-src/src/Makefile	2007-08-18 22:17:59.000000000 +0200
+@@ -6,7 +6,7 @@
+ CFLAGS=-g -O3
+ endif
+ 
+-LINKFLAGS=
++LDFLAGS=
+ 
+ SRCS=\
+ 	animation.cpp\
+@@ -42,16 +42,16 @@
+ default: monster
+ 
+ monster: $(LIBOBJS) monster.o logos.h
+-	g++ $(LINKFLAGS) -o monster $(LIBOBJS) monster.o $(LIBS)
++	$(CC) $(LDFLAGS) -o monster $(LIBOBJS) monster.o $(LIBS)
+ 
+ editor: $(LIBOBJS) editor.o
+-	g++ -o meditor $(LIBOBJS) editor.o $(LIBS)
++	$(CC) -o meditor $(LIBOBJS) editor.o $(LIBS)
+ 
+ mkanim: $(LIBOBJS) mkanim.o
+-	g++ -o mkanim $(LIBOBJS) mkanim.o $(LIBS)
++	$(CC) -o mkanim $(LIBOBJS) mkanim.o $(LIBS)
+ 
+ mkanimset: $(LIBOBJS) mkanimset.o
+-	g++ -o mkanimset $(LIBOBJS) mkanimset.o $(LIBS)
++	$(CC) -o mkanimset $(LIBOBJS) mkanimset.o $(LIBS)
+ 
+ .cpp.o:
+ 	$(CC) $(CFLAGS) -c $<
