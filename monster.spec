@@ -7,6 +7,8 @@ License:	BSD
 Group:		X11/Applications/Games
 Source0:	http://www.nooskewl.com/monster/Monster-%{version}-src.tar.gz
 # Source0-md5:	1976726b4c453c0e3b33f591d7c1293d
+Source1:	%{name}.desktop
+Source2:	%{name}.xpm
 Patch0:		%{name}-util.patch
 Patch1:		%{name}-lua.patch
 Patch2:		%{name}-Makefile.patch
@@ -18,7 +20,6 @@ BuildRequires:	libogg-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	logg-devel
 BuildRequires:	lua51-devel
-BuildRequires:	sed >= 4.0
 BuildRequires:	tgui-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,8 +43,10 @@ Monster jest krótką grą RPG rodem z NES/SNES.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name},%{_desktopdir},%{_pixmapsdir}}
 
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 install src/%{name} $RPM_BUILD_ROOT%{_bindir}
 cp -r data $RPM_BUILD_ROOT%{_datadir}/%{name}
 
@@ -54,3 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.xpm
