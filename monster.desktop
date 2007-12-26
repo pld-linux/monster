@@ -2,10 +2,9 @@
 Name=Monster
 Comment=NES/SNES style RPG
 Comment[pl]=Gra RPG rodem z NES/SNES
-Icon=monster.xpm
+Icon=monster
 Exec=monster
 Terminal=false
 Type=Application
 Categories=Game;RolePlaying;
-Encoding=UTF-8
 # vi: encoding=utf-8
