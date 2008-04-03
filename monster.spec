@@ -12,15 +12,15 @@ Source2:	%{name}.xpm
 Patch0:		%{name}-util.patch
 Patch1:		%{name}-lua.patch
 Patch2:		%{name}-Makefile.patch
-URL:		http://www.nooskewl.com/monster/
+URL:		http://www.nooskewl.com/
 BuildRequires:	allegro-devel >= 4.2.1
 BuildRequires:	freetype-devel
-BuildRequires:	fudgefont-devel
+BuildRequires:	fudgefont-devel >= 1.2
 BuildRequires:	libogg-devel
 BuildRequires:	libvorbis-devel
-BuildRequires:	logg-devel
+BuildRequires:	logg-devel >= 2.5
 BuildRequires:	lua51-devel
-BuildRequires:	tgui-devel
+BuildRequires:	tgui-devel >= 0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
